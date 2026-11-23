@@ -1,4 +1,4 @@
-from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
+from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 from telegram.ext import CallbackContext
 
 
@@ -27,6 +27,10 @@ def send_menu(update: Update, context: CallbackContext) -> None:
         reply_markup=ReplyKeyboardMarkup(
             keyboard=[
                 [
+                    KeyboardButton(
+                        text='Mahsulotlar',
+                        web_app=WebAppInfo(url='https://tirikchilik.uz/')
+                    ),
                     KeyboardButton(text="Bosh sahifa"),
                     KeyboardButton(text="Mening profilim"),
                 ],
